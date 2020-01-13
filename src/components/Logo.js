@@ -12,7 +12,7 @@ export default class Logo extends Component {
 
     render() {
         return (
-            <div className="logo" style={this.state.style}>SN</div>
+            <div className={`logo`} style={this.state.style}>SN</div>
         );
     }
 }

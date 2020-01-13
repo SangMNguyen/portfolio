@@ -19,12 +19,16 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    console.log(this.props.location.key);
+  }
+
   render() {
     return (
       <div className="App">
-        <Header home={this.props.location.pathname === '/' ? true : false}/>
+        <Header home={this.props.location.pathname === '/' ? true : false} curLoc={this.props.location.pathname}/>
         <TransitionGroup>
-          <CSSTransition key={this.props.location.key} timeout={500} classNames='fade' appear>
+          <CSSTransition key={this.props.location.pathname} timeout={{enter: 750, exit: 750}} classNames='fade'>
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route path="/bio" component={Biography}/>

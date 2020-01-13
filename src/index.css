@@ -22,6 +22,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
 
+html {
+  background-color: black;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -29,33 +33,37 @@ body {
 }
 
 .fade-enter {
+  transform: scale(0) translateX(-1000px);
   opacity: 0;
 }
 
 .fade-enter-active {
+  transform: scale(1) translateX(0px);
   opacity: 1;
-  transition: 500ms ease-in;
+  transition: 0.75s ease-in;
 }
 
 .fade-exit {
+  transform: scale(1) translateX(0px);
   opacity: 1;
 }
 
 .fade-exit-active {
+  transform: scale(0) translateX(1000px);
   opacity: 0;
-  transition: 500ms ease-out;
+  transition: 0.75s ease-in;
 }
 
 .logo {
   font-family: 'Mansalva', cursive;
-  font-size: 45px;
+  font-size: 40px;
   margin: 0 0 0 25px;
 }
 
 #resume {
   margin: 0 0 0 25px;
   font-size: 40px;
-  font-family: 'Mansalva', serif;
+  font-family: 'Abel', serif;
 }
 
 .header {
@@ -69,10 +77,105 @@ body {
   height: 10vh;
 }
 
-.header .left {
+.header a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.header a:hover {
+  color: white;
+  text-decoration: none;
+  opacity: 1.0;
+  transition: 0.3s;
+}
+
+.header .left, .header .right {
   display: flex;
   flex-direction: row;
   align-items: center;
+  z-index: 99;
+}
+
+.header .left {
+  position: relative;
+  right: 75px;
+  transition: 0.5s;
+}
+
+.left.show {
+  left: 0px;
+  transition: 0.5s;
+}
+
+.header .center {
+  position: absolute;
+  left: 10%;
+  z-index: 10 !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  font-family: 'Abel', serif;
+  font-size: 35px;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: 0.5s;
+}
+
+.center.show {
+  opacity: 1;
+  transform: scaleY(1);
+  transition: 0.5s;
+}
+
+.center.show a::after, .links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0.1rem;
+  background: #FFFFFF;
+  transition: 0.3s;
+  opacity: 0.7;
+}
+
+.center.show a:hover::after, .center.show .active::after, .links a:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+
+.center .active  {
+  pointer-events: none;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+#linkedin {
+  height: 50x;
+  width: 50px;
+  padding: 5px 1px 5px 5px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #0E76A8 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+#github {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #24292E 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+#linkedin:hover, #github:hover {
+  background-position: left bottom;
+  transition: all 0.5s ease;
 }
 
 h1 {
@@ -103,22 +206,8 @@ h1 {
   margin-top: -1rem;
   width: 40vw;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-around;
-}
-
-.header a {
-  color: white;
-  text-decoration: none;
-  opacity: 0.7;
-  transition: 0.3s;
-}
-
-.header a:hover {
-  color: white;
-  text-decoration: none;
-  opacity: 1.0;
-  transition: 0.3s;
 }
 
 .links a {
@@ -127,16 +216,17 @@ h1 {
   color: white;
   font-size: 25px;
   font-family: 'Amiri', serif;
+  text-decoration: none;
   transition: 0.3s;
 }
 
 .links a:hover {
   color: white;
-  opacity: 1.0;
-  transition: 0.3s;
+  text-decoration: none;
+  opacity: 1;
 }
 
-.biography {
+.biography, .projects, .contact {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
