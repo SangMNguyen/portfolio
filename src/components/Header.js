@@ -13,8 +13,8 @@ export default class Header extends Component {
             <div className={`header`}>
                 <div className={`left ${!this.props.home ? 'show' : ''}`}>
                     <Link to="/" title="Back to Title Page"><Logo color="white"/></Link>
-                    <a href={Resume} target="_blank" rel="noopener noreferrer" id="resume">
-                        {!this.props.home ? <img src={ResumeIcon} style={{height: "60px", width: "60px"}} alt="Resume" title="View Resume"/> : 'RESUME'}
+                    <a href={Resume} target="_blank" rel="noopener noreferrer" id="resume" className={this.props.home ? 'home' : 'away'} title="View Resume">
+                        <img src={ResumeIcon} style={{height: "60px", width: "60px"}} alt="Resume" title="View Resume"/><span>RESUME</span>
                     </a>
                 </div>
                 <div className={`center ${!this.props.home ? 'show' : ''}`}>
