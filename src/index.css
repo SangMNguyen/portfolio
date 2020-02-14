@@ -20,6 +20,8 @@
 @import url('https://fonts.googleapis.com/css?family=Ramaraja&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Display&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Cambay&display=swap');
+
 @import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
 
 html {
@@ -33,37 +35,60 @@ body {
   background: transparent;
 }
 
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 a {
   user-select: none;
 }
 
-.fade-enter {
-  transform: scale(0) translateX(-1000px);
-  opacity: 0;
-}
-
-.fade-enter-active {
-  transform: scale(1) translateX(0px);
+/* ***************************************************************************** TRANSITIONS ************************************************************************************ */
+.current {
   opacity: 1;
-  transition: 0.75s ease-in;
+  transition: 1s ease-in-out;
 }
 
-.fade-exit {
-  transform: scale(1) translateX(0px);
-  opacity: 1;
-}
-
-.fade-exit-active {
-  transform: scale(0) translateX(1000px);
-  opacity: 0;
-  transition: 0.75s ease-in;
-}
+/* ***************************************************************************** LOGO ************************************************************************************ */
 
 .logo {
   font-family: 'Mansalva', cursive;
   font-size: 40px;
   margin: 0 0 0 25px;
 }
+
+.logo span {
+  position: relative;
+  z-index: 20001 !important;
+}
+
+#logoRing {
+  fill: none;
+  stroke-width: 5px;
+  stroke: white;
+  stroke-dasharray: 300 300;
+  stroke-dashoffset: 300;
+  transition: stroke-dashoffset 0.75s ease;
+}
+
+.logo:hover #logoRing {
+  stroke-dashoffset: 0;
+}
+
+.logo:active #logoRing {
+  fill: white;
+}
+
+.logo:active span {
+  color: black;
+}
+
+/* ***************************************************************************** HEADER BAR ************************************************************************************ */
 
 #resume {
   margin: 0 0 0 25px;
@@ -127,7 +152,7 @@ a {
   transition: 0.75s;
 }
 
-.left.show {
+.header .left.show {
   right: 0px;
   transition: right 0.9s;
 }
@@ -150,7 +175,7 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  width: 80%;
+  width: 79%;
   font-family: 'Abel', serif;
   font-size: 35px;
   opacity: 0;
@@ -199,7 +224,7 @@ a {
 }
 
 #github {
-  background: linear-gradient(to right, #24292E 50%, transparent 50%);
+  background: linear-gradient(to right, #4F277B, #A048AC 50%, transparent 50%);
   background-size: 200% 100%;
   background-position: right bottom;
 }
@@ -209,21 +234,28 @@ a {
   transition: all 0.5s ease;
 }
 
-h1 {
-  font-size: 70px !important;
+/* ***************************************************************************** CONTENT DATA ******************************************************************************** */
+
+.main h1 {
+  font-size: 90px !important;
   text-align: center;
-  margin: 0 5px 0 5px;
+  margin: 5px 0 5px 0;
   padding: 0;
+  letter-spacing: .25rem;
+  word-break: keep-all;
+}
+
+@media (max-width: 1440px) {
+  .main h1 {
+    font-size: 70px !important;
+  }
 }
 
 .main {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
   overflow: hidden;
   background-color: black;
   color: white;
@@ -257,29 +289,188 @@ h1 {
 }
 
 .biography, .projects, .contact {
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
   background-color: transparent;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-slide {
-  font-family: 'Mansalva', serif;
-  display: flex;
-  flex-direction: row;
+/* ***************************************************************************** BIOGRAPHY ************************************************************************************ */
+.showcase .view {
+  top: 0;
+  left: 0px;
+  position: absolute;
 }
 
-slide img {
-  height: 600px;
-  width: 600px;
-}
-
-slide div {
+.slide {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+}
+
+.slide .text .title {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.slide .text {
+  font-family: 'Cambay', serif;
+  text-align: left;
+  font-size: 30px;
+  width: 50%;
+  min-width: 25%;
+  padding: 0 50px 0 50px;
+  word-break: keep-all;
+}
+
+.slide img {
+  display: flex;
+  min-height: 100%;
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.slide .image {
+  overflow: hidden;
+  height: 100vh;
+  width: 50%;
+}
+
+.slideNav {
+  position: relative;
+  top: calc(50vh - 50px);
+}
+
+/* ***************************************************************************** PROJECTS ************************************************************************************ */
+
+
+
+/* ***************************************************************************** CONTACT ************************************************************************************ */
+
+.contact {
+  justify-content: space-around;
+  flex-direction: column;
+  min-height: 400px;
+  min-width: 950px;
+  width: 80vw;
+}
+
+.contact h2 {
+  font-size: 45px;
+  margin: 20px 0px;
+  user-select: none;
+}
+
+.contact .info {
+  height: 150px;
+  width: 400px;
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0px 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.contact .emailForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 900px);
+  min-width: 500px;
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 10px 10px 0px 10px;
+  width: 100%;
+}
+
+.inputField img {
+  position: absolute;
+  margin: -3px 0 0 0;
+  width: 30px;
+  display: inline-block;
+}
+
+.check {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: -100;
+  -webkit-animation: dash-check 1s .35s ease-in-out forwards;
+  animation: dash-check 1s .35s ease-in-out forwards;
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.inputField input, .contact .emailForm textarea {
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
+
+.inputField:hover input, .inputField input:focus, .emailForm textarea:focus, .emailForm textarea:hover {
+  opacity: 1.0;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.inputField input, .contact .emailForm textarea {
+  background-color: white;
+  color: black;
+  resize: none;
+
+  padding: 5px 10px;
+  margin: 0px 0px 10px 0px;
+  border: none;
+  border-radius: 10px;
+}
+
+.contact .emailForm textarea {
+  height: 200px;
+}
+
+.inputField input::placeholder, .contact .emailForm textarea::placeholder {
+  color: #929D9E;
+}
+
+.filled {
+  opacity: 1 !important;
+}
+
+.contact .emailForm button {
+  border: 0.1rem solid white;
+  padding: 10px 0;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, red, orange 50%,transparent 50%);
+  background-size: 100% 200%;
+  background-position: left bottom;
+  color: white;
+  width: 200px;
+  margin: 15px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+.contact .emailForm button:hover {
+  transition: 0.3s ease-in-out;
+  background-position: left top;
+  color: black;
+}
+
+.contact .selfEmail {
+  margin: 15px 0 0 0;
 }
