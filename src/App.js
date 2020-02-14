@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './App.css';
 import Header from './components/Header';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import Home from './pages/Home';
 import Biography from './pages/Biography';
@@ -16,27 +15,26 @@ class App extends Component {
     super(props);
 
     this.state = {
+      page: 'home',
     }
   }
 
-  componentDidMount() {
-    console.log(this.props.location.key);
+  switchPage = (view) => {
+    this.setState({page: view});
   }
 
   render() {
     return (
       <div className="App">
         <Header home={this.props.location.pathname === '/' ? true : false} curLoc={this.props.location.pathname}/>
-        <TransitionGroup>
-          <CSSTransition key={this.props.location.pathname} timeout={{enter: 750, exit: 750}} classNames='fade'>
-            <Switch>
-              <Route exact path="/" component={Home}/>
-              <Route path="/bio" component={Biography}/>
-              <Route path="/projects" component={Projects}/>
-              <Route path="/contact" component={Contact}/>
-            </Switch>
-          </CSSTransition>
-        </TransitionGroup>
+        <div className="container">
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/bio" component={Biography}/>
+            <Route path="/projects" component={Projects}/>
+            <Route path="/contact" component={Contact}/>
+          </Switch>
+        </div>
       </div>
     );
   }
