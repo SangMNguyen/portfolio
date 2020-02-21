@@ -240,15 +240,6 @@ a {
 
 /* ***************************************************************************** CONTENT DATA ******************************************************************************** */
 
-.main span {
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 50px 0 0 0;
-}
-
 .main h1 {
   font-size: 90px !important;
   text-align: center;
@@ -256,6 +247,7 @@ a {
   padding: 0;
   letter-spacing: .25rem;
   word-break: keep-all;
+  user-select: all;
 }
 
 @keyframes bg-anim {
@@ -274,6 +266,7 @@ a {
   height: 40vh;
   color: black;
   background: url('./assets/grid.png') repeat 0 0;
+  user-select: none;
 
   animation: bg-anim 2s infinite;
   animation-timing-function: linear;
@@ -408,6 +401,14 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.credits {
+  user-select: none;
+}
+
+.credits span {
+  user-select: all;
 }
 
 /* ***************************************************************************** BIOGRAPHY ************************************************************************************ */
@@ -619,10 +620,10 @@ a {
 }
 
 .contact .emailForm button {
-  border: 0.1rem solid white;
+  border: 3px solid white;
   padding: 10px 0;
   border-radius: 25px;
-  background: linear-gradient(to bottom, orange, green 50%,transparent 50%);
+  background: linear-gradient(to bottom, white 50%,transparent 50%);
   background-size: 100% 200%;
   background-position: left bottom;
   color: white;
@@ -637,9 +638,9 @@ a {
   transition: 0.3s ease-in-out;
   background-position: left top;
   font-size: 20px;
-  padding: 15px 0px;
+  padding: 10px 0px;
   width: 210px;
-  margin: 7px;
+  margin: 12px;
   color: black;
 }
 

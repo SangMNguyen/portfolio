@@ -13,7 +13,7 @@ export default class Home extends Component {
                     <Link to="/projects" title="View Projects">Projects</Link>
                     <Link to="/contact" title="View Contact Info">Contact</Link>
                 </div>
-                <p>Designed &amp; Coded by Sang Nguyen | Pictures by Bryant Lee</p>
+                <p className="credits">Designed &amp; Coded by <span>Sang Nguyen</span> | Pictures by <span>Bryant Lee</span></p>
             </div>
         );
     }
