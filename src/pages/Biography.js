@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
-import Carousel from 'react-bootstrap/Carousel';
 import Showcase from '../components/Showcase';
 
-import Image1 from '../assets/john.jpg';
-import Image2 from '../assets/background1.jpg';
-import Image3 from '../assets/background3.jpg';
-import Image4 from '../assets/bean.png';
-
-import CarouselCaption from 'react-bootstrap/CarouselCaption';
+const Image1 = require('../assets/john.jpg');
+const Image2 = require('../assets/background1.jpg');
+const Image3 = require('../assets/background3.jpg');
+const Image4 = require('../assets/bean.png');
 
 export default class Biography extends Component {
     constructor(props) {
@@ -22,7 +19,7 @@ export default class Biography extends Component {
     render() {
         return (
             <div className={`biography ${this.props.inView ? 'current' : ''}`}>
-                <Showcase images={Image1} titles={`Who Am I?`}
+                <Showcase images={this.state.images} titles={this.state.titles}
                 text={`Lorem ipsum dolor sit amet, 
                 consectetur adipiscing elit. Proin dictum eleifend massa eu porttitor. 
                 Nam vel nunc lectus. Cras lacinia lobortis ipsum auctor mollis. 
