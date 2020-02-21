@@ -152,6 +152,10 @@ a {
   transition: 0.75s;
 }
 
+.header .left a {
+  color: white;
+}
+
 .header .left.show {
   right: 0px;
   transition: right 0.9s;
@@ -236,6 +240,15 @@ a {
 
 /* ***************************************************************************** CONTENT DATA ******************************************************************************** */
 
+.main span {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 0 0 0;
+}
+
 .main h1 {
   font-size: 90px !important;
   text-align: center;
@@ -245,9 +258,104 @@ a {
   word-break: keep-all;
 }
 
+@keyframes bg-anim {
+  0% { background-position: 100px 0px; }
+}
+
+.main h3 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  font-size: 50px;
+  width: 100vw;
+  height: 40vh;
+  color: black;
+  background: url('./assets/grid.png') repeat 0 0;
+
+  animation: bg-anim 2s infinite;
+  animation-timing-function: linear;
+}
+
+.main h3:after {
+  display: flex;
+  content: '';
+  padding-left: 0.05rem;
+  width: 0px;
+  overflow: hidden;
+  white-space: pre;
+  animation: typewrite 32s steps(12) infinite normal,
+    caret 1s steps(2) infinite normal;
+}
+
+/******************** TYPING ANIMATION *********************/
+@keyframes typewrite {
+  0%, 18.75% {
+    width: 3px;
+    content: ' a designer.';
+  }
+
+  6.25%, 12.5% {
+    width: 333px;
+    content: ' a designer.';
+  }
+
+  25%, 43.75% {
+    width: 3px;
+    content: ' an innovator.';
+    animation-timing-function: steps(14);
+  }
+
+  31.25%, 37.5% {
+    width: 387px;
+    content: ' an innovator.';
+    animation-timing-function: steps(14);
+  }
+
+  50%, 68.75% {
+    width: 3px;
+    content: ' a collaborator.';
+    animation-timing-function: steps(16);
+  }
+
+  56.25%, 62.5% {
+    width: 443px;
+    content: ' a collaborator.';
+    animation-timing-function: steps(16);
+  }
+
+  75%, 93.75% {
+    width: 3px;
+    content: ' a developer.';
+    animation-timing-function: steps(13);
+  }
+
+  81.25%, 87.5% {
+    width: 359px;
+    content: ' a developer.';
+    animation-timing-function: steps(13);
+  }
+
+  100% {
+    width: 3px;
+    content: '';
+  }
+}
+
+@keyframes caret {
+  from {border-right: 3px solid #0F0F0F}
+  to {border-right: none;}
+}
+
 @media (max-width: 1440px) {
   .main h1 {
     font-size: 70px !important;
+  }
+
+  .main h3 {
+    font-size: 40px;
   }
 }
 
@@ -256,12 +364,17 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  overflow: hidden;
   background-color: black;
   color: white;
   font-family: 'Cinzel', serif;
   /* Abel, Cinzel, Old Standard TT, Cardo, Nanum Myeongjo, Yeseva One, Prata, Cormorant, Abhaya Libre, Oranienbaum, Gilda Display, Libre Caslon Display */
   z-index: 1;
+}
+
+.main p {
+  font-family: 'Abel', serif;
+  position: absolute;
+  bottom: 5px;
 }
 
 .links {
@@ -299,9 +412,9 @@ a {
 
 /* ***************************************************************************** BIOGRAPHY ************************************************************************************ */
 .showcase .view {
-  top: 0;
-  left: 0px;
   position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .slide {
@@ -309,6 +422,17 @@ a {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+}
+
+.slide.left, .slide.right {
+  display: none;
+}
+
+.slide.active {
+  display: flex;
 }
 
 .slide .text .title {
@@ -330,6 +454,7 @@ a {
   display: flex;
   min-height: 100%;
   min-width: 100%;
+  max-width: 100%;
   flex-shrink: 0;
 }
 
@@ -340,8 +465,50 @@ a {
 }
 
 .slideNav {
+  display: flex;
+  flex-direction: row;
   position: relative;
   top: calc(50vh - 50px);
+  z-index: 20001;
+}
+
+.slideNav .pipBox {
+  margin: 0px 12px;
+  display: flex;
+  flex-direction: row;
+}
+
+.pip circle {
+  fill: transparent;
+  transition: 0.3s fill ease-out;
+  cursor: pointer;
+}
+
+.pip.active circle {
+  fill: white;
+  transition: 0.3s fill ease-in;
+  cursor: default;
+}
+
+.slideNav #leftArrow {
+  transition: 0.3s ease-in-out;
+}
+
+.slideNav #leftArrow:hover {
+  padding: 0 12px 0 0;
+  margin: 0 0 0 -12px;
+  transition: 0.3s ease-in-out;
+}
+
+.slideNav #rightArrow {
+  transform: scaleX(-1);
+  transition: 0.3s ease-in-out;
+}
+
+.slideNav #rightArrow:hover {
+  padding: 0 12px 0 0;
+  margin: 0 -12px 0 0;
+  transition: 0.3s ease-in-out;
 }
 
 /* ***************************************************************************** PROJECTS ************************************************************************************ */
@@ -455,7 +622,7 @@ a {
   border: 0.1rem solid white;
   padding: 10px 0;
   border-radius: 25px;
-  background: linear-gradient(to bottom, red, orange 50%,transparent 50%);
+  background: linear-gradient(to bottom, orange, green 50%,transparent 50%);
   background-size: 100% 200%;
   background-position: left bottom;
   color: white;
@@ -463,11 +630,16 @@ a {
   margin: 15px;
   font-weight: 600;
   transition: 0.3s ease-in-out;
+  position: static;
 }
 
 .contact .emailForm button:hover {
   transition: 0.3s ease-in-out;
   background-position: left top;
+  font-size: 20px;
+  padding: 15px 0px;
+  width: 210px;
+  margin: 7px;
   color: black;
 }
 
