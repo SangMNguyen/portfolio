@@ -41,7 +41,7 @@ export default class Contact extends Component {
                         title="Email Address" 
                         placeholder="i.e. johnsmith@gmail.com" 
                         onChange={this.handleChange}
-                        filled={/^[a-zA-Z0-9]+@[a-z]+\.(([a-z]{3})|([a-z]{2}\.[a-z]{2}))$/.test(this.state.email)}
+                        filled={/^[a-zA-Z0-9.]+@[a-z]+\.(([a-z]{3})|([a-z]{2}\.[a-z]{2}))$/.test(this.state.email)}
                     />
                     <span className="inputField">
                         <label htmlFor="message">Message</label>
