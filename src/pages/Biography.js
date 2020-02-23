@@ -12,7 +12,7 @@ export default class Biography extends Component {
 
         this.state = {
             images: [Image1, Image2, Image3, Image4],
-            titles: ['Who Am I?', 'Academics', 'Why Programming?', 'Life Aspirations'],
+            titles: ['Who Am I?', 'Why Programming?', 'What Else Do I Do?', 'My Aspirations for Life.'],
         }
     }
 
@@ -20,11 +20,11 @@ export default class Biography extends Component {
         return (
             <div className={`biography ${this.props.inView ? 'current' : ''}`}>
                 <Showcase images={this.state.images} titles={this.state.titles}
-                text={`Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit. Proin dictum eleifend massa eu porttitor. 
-                Nam vel nunc lectus. Cras lacinia lobortis ipsum auctor mollis. 
-                Mauris ut varius ipsum. Quisque non quam at arcu placerat lobortis et
-                sed eros. Maecenas molestie elementum justo. Phasellus vitae pretium nibh. `}/>
+                text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Proin dictum eleifend massa eu porttitor. Nam vel nunc lectus. 
+                Cras lacinia lobortis ipsum auctor mollis. Mauris ut varius ipsum. 
+                Quisque non quam at arcu placerat lobortis et sed eros. Maecenas 
+                molestie elementum justo. Phasellus vitae pretium nibh. `}/>
             </div>
         );
     }
