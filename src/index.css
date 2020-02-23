@@ -294,7 +294,7 @@ a {
   }
 
   6.25%, 12.5% {
-    width: 333px;
+    width: 6.66em;
     content: ' a designer.';
   }
 
@@ -305,7 +305,7 @@ a {
   }
 
   31.25%, 37.5% {
-    width: 387px;
+    width: 7.74em;
     content: ' an innovator.';
     animation-timing-function: steps(14);
   }
@@ -317,7 +317,7 @@ a {
   }
 
   56.25%, 62.5% {
-    width: 443px;
+    width: 8.86em;
     content: ' a collaborator.';
     animation-timing-function: steps(16);
   }
@@ -329,7 +329,7 @@ a {
   }
 
   81.25%, 87.5% {
-    width: 359px;
+    width: 7.18em;
     content: ' a developer.';
     animation-timing-function: steps(13);
   }
