@@ -254,7 +254,7 @@ a {
 }
 
 @keyframes bg-anim {
-  0% { background-position: 100px 0px; }
+  0% { background-position: 100px 100px; }
 }
 
 .main h3 {
@@ -268,10 +268,10 @@ a {
   width: 100vw;
   height: 40vh;
   color: black;
-  background: url('./assets/grid.png') repeat 0 0;
+  background: url('./assets/gridtest.png') repeat 0 0;
   user-select: none;
 
-  animation: bg-anim 2s infinite;
+  animation: bg-anim 3s infinite;
   animation-timing-function: linear;
 }
 
