@@ -19,10 +19,16 @@
 @import url('https://fonts.googleapis.com/css?family=Oranienbaum&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ramaraja&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 @import url('https://fonts.googleapis.com/css?family=Cambay&display=swap');
 
 @import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+@font-face {
+  font-family: 'NeueHelvetica';
+  src: url('./fonts/helveticaneue.ttf') format('truetype');
+}
 
 html {
   background: transparent;
@@ -93,7 +99,7 @@ a {
 #resume {
   margin: 0 0 0 25px;
   font-size: 40px;
-  font-family: 'Abel', serif;
+  font-family: 'NeueHelvetica';
 }
 
 #resume span, #resume img {
@@ -386,7 +392,7 @@ a {
   opacity: 0.7;
   color: white;
   font-size: 25px;
-  font-family: 'Amiri', serif;
+  font-family: 'NeueHelvetica';
   text-decoration: none;
   transition: 0.3s;
 }
@@ -419,6 +425,9 @@ a {
   position: absolute;
   top: 0;
   left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .slide {
@@ -428,24 +437,39 @@ a {
   align-items: center;
   min-height: 100%;
   min-width: 100%;
-  position: relative;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  transition: left 0.3s;
+  transition: opacity 0.5s;
 }
 
-.slide.left, .slide.right {
-  display: none;
+.slide.left {
+  left: -100%;
+  transition: left 0.3s;
+}
+
+.slide.right {
+  left: 100%;
+  transition: left 0.3s;
 }
 
 .slide.active {
-  display: flex;
+  left: 0;
+  opacity: 1;
+  transition: left 0.3s;
+  transition: opacity 0.5s;
 }
 
 .slide .text .title {
   font-size: 40px;
   font-weight: 700;
+  font-family: 'NeueHelvetica';
 }
 
 .slide .text {
-  font-family: 'Cambay', serif;
+  font-family: 'Montserrat', sans-serif;
   text-align: left;
   font-size: 30px;
   width: 50%;
@@ -533,6 +557,7 @@ a {
   font-size: 45px;
   margin: 10px 0px;
   user-select: none;
+  font-family: 'NeueHelvetica';
 }
 
 .contact .info {
@@ -550,6 +575,7 @@ a {
 }
 
 .contact .emailForm {
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
