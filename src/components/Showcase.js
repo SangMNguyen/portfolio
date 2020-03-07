@@ -39,10 +39,38 @@ export default class Showcase extends Component {
         this.setState({currentIndex: num});
     }
 
+    handleKey = (e) => {
+        let key = e.key.split('Arrow');
+        if(key.length !== 2) {
+            return;
+        }
+        switch(key[1]) {
+            case 'Right':
+                this.nextSlide();
+                break;
+            
+            case 'Left':
+                this.prevSlide();
+                break;
+            
+            default:
+                return;
+        }
+    }
+
+    componentWillMount() {
+        document.addEventListener("keydown", this.handleKey, false);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("keydown", this.handleKey, false);
+    }
+
     render() {
         return (
-            <div className="showcase">
+            <div className={`showcase ${this.state.backgrounds ? 'display' : ''}`}>
                 <div className="view">
+                    {this.state.backgrounds && <img className="background" alt={''}/>}
                     {this.state.images.map((item, index) => 
                         <div className={`slide ${this.state.currentIndex === index ? 'active' : ''}`} key={index}>
                             <div className="image">
