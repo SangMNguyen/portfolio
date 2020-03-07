@@ -519,6 +519,7 @@ a {
 
 .slideNav #leftArrow {
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .slideNav #leftArrow:hover {
@@ -530,6 +531,7 @@ a {
 .slideNav #rightArrow {
   transform: scaleX(-1);
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .slideNav #rightArrow:hover {
