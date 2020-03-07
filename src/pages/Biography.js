@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import Showcase from '../components/Showcase';
 
-const Image1 = require('../assets/john.jpg');
-const Image2 = require('../assets/background1.jpg');
-const Image3 = require('../assets/background3.jpg');
-const Image4 = require('../assets/bean.png');
+const Image1 = require('../assets/bio1.jpg');
+const Image2 = require('../assets/bio2.jpg');
+const Image3 = require('../assets/bio3.jpg');
+const Image4 = require('../assets/bio4.jpg');
 
 export default class Biography extends Component {
     constructor(props) {
