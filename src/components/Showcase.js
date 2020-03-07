@@ -17,7 +17,8 @@ export default class Showcase extends Component {
     }
 
     nextSlide = () => {
-        if(this.state.currentIndex === 3) {
+        if(this.state.currentIndex === this.state.images.length - 1) {
+            this.setState({currentIndex: 0})
             return;
         }
         this.setState({currentIndex: this.state.currentIndex + 1});
@@ -25,6 +26,7 @@ export default class Showcase extends Component {
 
     prevSlide = () => {
         if(this.state.currentIndex === 0) {
+            this.setState({currentIndex: this.state.images.length - 1})
             return;
         }
         this.setState({currentIndex: this.state.currentIndex - 1});
@@ -41,45 +43,24 @@ export default class Showcase extends Component {
         return (
             <div className="showcase">
                 <div className="view">
-                    {this.state.currentIndex > 0 && 
-                        <div className="slide left">
+                    {this.state.images.map((item, index) => 
+                        <div className={`slide ${this.state.currentIndex === index ? 'active' : ''}`}>
                             <div className="image">
-                                <img src={this.state.images[this.state.currentIndex - 1]} alt={`View ${this.state.currentIndex - 1}`}/>
+                                <img src={item} alt={`View ${index}`}/>
                             </div>
                             <div className="text">
-                                <h2 className="title">{this.state.titles[this.state.currentIndex - 1]}</h2>
+                                <h2 className="title">{this.state.titles[index]}</h2>
                                 {this.state.text}
                             </div>
                         </div>
-                    }
-                    <div className="slide active">
-                        <div className="image">
-                            <img src={this.state.images[this.state.currentIndex]} alt={`View ${this.state.currentIndex}`}/>
-                        </div>
-                        <div className="text">
-                            <h2 className="title">{this.state.titles[this.state.currentIndex]}</h2>
-                            {this.state.text}
-                        </div>
-                    </div>
-                    {this.state.currentIndex < this.state.images.length - 1 && 
-                        <div className="slide right">
-                            <div className="image">
-                                <img src={this.state.images[this.state.currentIndex + 1]} alt={`View ${this.state.currentIndex + 1}`}/>
-                            </div>
-                            <div className="text">
-                                <h2 className="title">{this.state.titles[this.state.currentIndex + 1]}</h2>
-                                {this.state.text}
-                            </div>
-                        </div>
-                    }
+                    )}
                 </div>
                 <div className="slideNav">
                     <img src={arrow} id={'leftArrow'} onClick={this.prevSlide} alt={''}/>
                     <div className="pipBox">
-                        <Pip active={this.state.currentIndex === 0} onClick={() => this.setSlide(0)}/>
-                        <Pip active={this.state.currentIndex === 1} onClick={() => this.setSlide(1)}/>
-                        <Pip active={this.state.currentIndex === 2} onClick={() => this.setSlide(2)}/>
-                        <Pip active={this.state.currentIndex === 3} onClick={() => this.setSlide(3)}/>
+                        {this.state.images.map((item, index) => 
+                            <Pip active={this.state.currentIndex === index} onClick={() => this.setSlide(index)}/>
+                        )}
                     </div>
                     <img src={arrow} id={'rightArrow'} onClick={this.nextSlide} alt={''}/>
                 </div>
