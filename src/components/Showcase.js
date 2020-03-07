@@ -44,7 +44,7 @@ export default class Showcase extends Component {
             <div className="showcase">
                 <div className="view">
                     {this.state.images.map((item, index) => 
-                        <div className={`slide ${this.state.currentIndex === index ? 'active' : ''}`}>
+                        <div className={`slide ${this.state.currentIndex === index ? 'active' : ''}`} key={index}>
                             <div className="image">
                                 <img src={item} alt={`View ${index}`}/>
                             </div>
@@ -59,7 +59,7 @@ export default class Showcase extends Component {
                     <img src={arrow} id={'leftArrow'} onClick={this.prevSlide} alt={''}/>
                     <div className="pipBox">
                         {this.state.images.map((item, index) => 
-                            <Pip active={this.state.currentIndex === index} onClick={() => this.setSlide(index)}/>
+                            <Pip key={index} active={this.state.currentIndex === index} onClick={() => this.setSlide(index)}/>
                         )}
                     </div>
                     <img src={arrow} id={'rightArrow'} onClick={this.nextSlide} alt={''}/>
