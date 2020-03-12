@@ -3,7 +3,7 @@ import Pip from './Pip';
 
 const arrow = require("../assets/arrowhead.svg");
 
-export default class Showcase extends Component {
+export default class ShowcasePlus extends Component {
     constructor(props) {
         super(props);
 
@@ -12,6 +12,8 @@ export default class Showcase extends Component {
             images: this.props.images,
             text: this.props.text,
             titles: this.props.titles,
+            backgrounds: this.props.backgrounds,
+            links: this.props.links,
         }
     }
 
@@ -67,7 +69,10 @@ export default class Showcase extends Component {
 
     render() {
         return (
-            <div className={`showcase`}>
+            <div className={`showcaseplus`}>
+                {this.state.backgrounds.map((item, index) => 
+                    <img className={`background ${this.state.currentIndex === index ? 'active' : ''}`} src={item} alt={''} />
+                )}
                 <div className="view">
                     {this.state.images.map((item, index) => 
                         <div className={`slide ${this.state.currentIndex === index ? 'active' : ''}`} key={index}>

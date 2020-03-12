@@ -27,7 +27,7 @@ export default class Contact extends Component {
     render() {
         return (
             <div className={`contact ${this.props.inView ? 'current' : ''}`}>
-                <h2>LET'S GET IN TOUCH.</h2>
+                <h2>GET IN TOUCH.</h2>
                 <form className="emailForm" onSubmit={this.sendEmail}>
                     <InputField 
                         name="name" 
