@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import ShowcasePlus from '../components/ShowcasePlus';
 
-const Image1 = require('../assets/bio1.jpg');
-const Image2 = require('../assets/bio2.jpg');
-const Image3 = require('../assets/bio3.jpg');
-const Image4 = require('../assets/bio4.jpg');
+const Image1 = "https://picsum.photos/500";
+const Image2 = "https://picsum.photos/501";
+const Image3 = "https://picsum.photos/502";
+const Image4 = "https://picsum.photos/503";
 
 const Back1 = require('../assets/background1.jpg');
 const Back2 = require('../assets/attempt.jpg');
@@ -29,14 +29,18 @@ export default class Project extends Component {
     }
 
     render() {
+        const images = [Image1, Image2, Image3, Image4];
+        
         return (
-            <div className={`projects ${this.props.inView ? 'current' : ''}`}>
-                <ShowcasePlus 
-                    images={this.state.images}
-                    backgrounds={this.state.backgrounds}
-                    titles={this.state.titles}
-                    text={this.state.text[0]}
-                />
+            <div>
+                <div className={`projects`}>
+                    <ShowcasePlus 
+                        images={images}
+                        backgrounds={this.state.backgrounds}
+                        titles={this.state.titles}
+                        text={this.state.text[0]}
+                    />
+                </div>
             </div>
         );
     }

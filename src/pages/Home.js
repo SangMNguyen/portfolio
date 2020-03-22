@@ -5,7 +5,7 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div className={`main ${this.props.inView ? 'current' : ''}`}>
+            <div className={`main`}>
                 <h3 id="typing">I am</h3>
                 <h1>SANG M. NGUYEN</h1>
                 <div className="links">

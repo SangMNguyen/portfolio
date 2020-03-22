@@ -26,36 +26,38 @@ export default class Contact extends Component {
 
     render() {
         return (
-            <div className={`contact ${this.props.inView ? 'current' : ''}`}>
-                <h2>GET IN TOUCH.</h2>
-                <form className="emailForm" onSubmit={this.sendEmail}>
-                    <InputField 
-                        name="name" 
-                        title="Name" 
-                        placeholder="i.e. John Smith" 
-                        onChange={this.handleChange} 
-                        filled={this.state.name.length > 0}
-                    />
-                    <InputField 
-                        name="email" 
-                        title="Email Address" 
-                        placeholder="i.e. johnsmith@gmail.com" 
-                        onChange={this.handleChange}
-                        filled={/^[a-zA-Z0-9.]+@[a-z]+\.(([a-z]{3})|([a-z]{2}\.[a-z]{2}))$/.test(this.state.email)}
-                    />
-                    <span className="inputField">
-                        <label htmlFor="message">Message</label>
-                        <textarea 
-                            type="text" 
-                            name="message" 
-                            placeholder="Your projects are subpar, but you look nice enough." 
+            <div>
+                <div className={`contact`}>
+                    <h2>GET IN TOUCH.</h2>
+                    <form className="emailForm" onSubmit={this.sendEmail}>
+                        <InputField 
+                            name="name" 
+                            title="Name" 
+                            placeholder="i.e. John Smith" 
                             onChange={this.handleChange} 
-                            className={this.state.message.length > 0 ? 'filled' : ''} 
-                            required
+                            filled={this.state.name.length > 0}
                         />
-                    </span>
-                    <button title="Send Message">Send Message</button>
-                </form>
+                        <InputField 
+                            name="email" 
+                            title="Email Address" 
+                            placeholder="i.e. johnsmith@gmail.com" 
+                            onChange={this.handleChange}
+                            filled={/^[a-zA-Z0-9.]+@[a-z]+\.(([a-z]{3})|([a-z]{2}\.[a-z]{2}))$/.test(this.state.email)}
+                        />
+                        <span className="inputField">
+                            <label htmlFor="message">Message</label>
+                            <textarea 
+                                type="text" 
+                                name="message" 
+                                placeholder="Your projects are subpar, but you look nice enough." 
+                                onChange={this.handleChange} 
+                                className={this.state.message.length > 0 ? 'filled' : ''} 
+                                required
+                            />
+                        </span>
+                        <button title="Send Message">Send Message</button>
+                    </form>
+                </div>
             </div>
         );
     }

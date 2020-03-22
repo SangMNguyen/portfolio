@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import Header from './components/Header';
 import { Switch, Route, withRouter } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import Home from './pages/Home';
 import Biography from './pages/Biography';
@@ -28,12 +29,20 @@ class App extends Component {
       <div className="App">
         <Header home={this.props.location.pathname === '/' ? true : false} curLoc={this.props.location.pathname}/>
         <div className="container">
-          <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route path="/bio" component={Biography}/>
-            <Route path="/projects" component={Projects}/>
-            <Route path="/contact" component={Contact}/>
-          </Switch>
+          <TransitionGroup>
+            <CSSTransition 
+              key={this.props.location.key}
+              timeout={{ enter: 1000, exit: 1000 }}
+              classNames={'fade'}
+            >
+              <Switch location={this.props.location}>
+                <Route exact path="/" component={Home}/>
+                <Route path="/bio" component={Biography}/>
+                <Route path="/projects" component={Projects}/>
+                <Route path="/contact" component={Contact}/>
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
         </div>
       </div>
     );
