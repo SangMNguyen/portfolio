@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import ShowcasePlus from '../components/ShowcasePlus';
 
-const Image1 = "https://picsum.photos/500";
-const Image2 = "https://picsum.photos/501";
-const Image3 = "https://picsum.photos/502";
-const Image4 = "https://picsum.photos/503";
+const Image1 = require('../assets/pong.png');
+const Image2 = require('../assets/ggimg.png');
+const Image3 = require('../assets/discordimg.png');
+const Image4 = require("../assets/t4timg.png");
 
-const Back1 = require('../assets/background1.jpg');
-const Back2 = require('../assets/attempt.jpg');
-const Back3 = require('../assets/background3.jpg');
-const Back4 = require('../assets/agheof.png');
+const Back1 = require('../assets/pong.gif');
+const Back2 = require('../assets/ggback.png');
+const Back3 = require('../assets/discordback.png');
+const Back4 = require('../assets/t4tback.png');
 
 export default class Project extends Component {
     constructor(props) {
