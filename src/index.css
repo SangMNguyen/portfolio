@@ -278,7 +278,7 @@ a {
   width: 100vw;
   height: 40vh;
   color: black;
-  background: url('./assets/gridtest.png') repeat 0 0;
+  background: url('./assets/gridplum.png') repeat 0 0;
   user-select: none;
 
   animation: bg-anim 3s infinite;
