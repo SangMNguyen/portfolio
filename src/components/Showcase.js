@@ -71,8 +71,8 @@ export default class Showcase extends Component {
                 <div className="view">
                     {this.state.images.map((item, index) => 
                         <div className={`slide ${this.state.currentIndex === index ? 'active' :
-                        this.state.currentIndex === index + 1 ? 'next' :
-                        this.state.currentIndex === index - 1 ? 'prev' : ''}`} key={index}>
+                        this.state.currentIndex >= index ? 'next' :
+                        this.state.currentIndex <= index ? 'prev' : ''}`} key={index}>
                             <div className="image">
                                 <img src={item} alt={`View ${index}`}/>
                             </div>
