@@ -603,14 +603,14 @@ a {
 }
 
 .showcaseplus .slide.next .image, .showcaseplus .slide.prev .text {
-  transform: translate3d(0, 1000px, 0) !important;
+  transform: translate3d(0, 1000px, 0);
   opacity: 0;
   transition: 1s ease-in;
   z-index: 0;
 }
 
 .showcaseplus .slide.prev .image, .showcaseplus .slide.next .text {
-  transform: translate3d(0, -1000px, 0) !important;
+  transform: translate3d(0, -1000px, 0);
   opacity: 0;
   transition: 1s ease-in;
   z-index: 0;
