@@ -788,7 +788,7 @@ a {
 .fade-enter {
   opacity: 0;
   transition: 0.5s ease-in;
-  transform: translate3d(0, -150%, 0);
+  transform: translate3d(0, 150%, 0);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -824,5 +824,5 @@ a {
 .fade-exit.fade-exit-active {
   opacity: 0;
   transition: 0.5s ease-in;
-  transform: translate3d(0, 150%, 0);
+  transform: translate3d(0, -150%, 0);
 }
