@@ -24,6 +24,11 @@ class App extends Component {
     this.setState({page: view});
   }
 
+  componentWillMount() {
+    this.props.history.push('/');
+  }
+
+
   render() {
     return (
       <div className="App">
