@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ShowcasePlus from '../components/ShowcasePlus';
+import Showcase from '../components/Showcase';
 
 const Image1 = require('../assets/pong.png');
 const Image2 = require('../assets/ggimg.png');
@@ -34,7 +34,7 @@ export default class Project extends Component {
         return (
             <div>
                 <div className={`projects`}>
-                    <ShowcasePlus 
+                    <Showcase 
                         images={images}
                         backgrounds={this.state.backgrounds}
                         titles={this.state.titles}

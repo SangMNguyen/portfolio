@@ -12,6 +12,8 @@ export default class Showcase extends Component {
             images: this.props.images,
             text: this.props.text,
             titles: this.props.titles,
+            backgrounds: this.props.backgrounds,
+            links: this.props.links,
         }
     }
 
@@ -67,7 +69,10 @@ export default class Showcase extends Component {
 
     render() {
         return (
-            <div className={`showcase`}>
+            <div className={`${this.props.backgrounds ? 'showcaseplus' : 'showcase'}`}>
+                {this.props.backgrounds && this.state.backgrounds.map((item, index) => 
+                    <img className={`background ${this.state.currentIndex === index ? 'active' : ''}`} src={item} alt={''} />
+                )}
                 <div className="view">
                     {this.state.images.map((item, index) => 
                         <div className={`slide ${this.state.currentIndex === index ? 'active' :
