@@ -11,6 +11,21 @@ import Contact from './pages/Contact';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+/*const Image1 = require('../assets/bio1.jpg');
+const Image2 = require('../assets/bio2.jpg');
+const Image3 = require('../assets/bio3.png');
+const Image4 = require('../assets/bio4.jpg');
+
+const Image1 = require('../assets/pong.png');
+const Image2 = require('../assets/ggimg.png');
+const Image3 = require('../assets/discordimg.png');
+const Image4 = require("../assets/t4timg.png");
+
+const Back1 = require('../assets/pong.gif');
+const Back2 = require('../assets/ggback.png');
+const Back3 = require('../assets/discordback.png');
+const Back4 = require('../assets/t4tback.png'); */
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,10 +39,9 @@ class App extends Component {
     this.setState({page: view});
   }
 
-  componentWillMount() {
-    this.props.history.push('/');
+  componentDidMount() {
+    document.getElementById("loadingScreen").classList.add("hide");
   }
-
 
   render() {
     return (
@@ -36,7 +50,7 @@ class App extends Component {
         <div className="container">
           <TransitionGroup>
             <CSSTransition 
-              key={this.props.location.key}
+              key={this.props.location.pathname}
               timeout={{ enter: 1000, exit: 1000 }}
               classNames={'fade'}
             >
