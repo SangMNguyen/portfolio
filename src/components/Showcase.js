@@ -14,6 +14,7 @@ export default class Showcase extends Component {
             titles: this.props.titles,
             backgrounds: this.props.backgrounds,
             links: this.props.links,
+            hideView: this.props.backgrounds ? false : null,
         }
     }
 
@@ -59,6 +60,10 @@ export default class Showcase extends Component {
         }
     }
 
+    showBackground = () => {
+        this.setState({ hideView: !this.state.hideView})
+    }
+
     componentWillMount() {
         document.addEventListener("keydown", this.handleKey, false);
     }
@@ -71,9 +76,9 @@ export default class Showcase extends Component {
         return (
             <div className={`${this.props.backgrounds ? 'showcaseplus' : 'showcase'}`}>
                 {this.props.backgrounds && this.state.backgrounds.map((item, index) => 
-                    <img className={`background ${this.state.currentIndex === index ? 'active' : ''}`} src={item} alt={''} />
+                    <img className={`background ${this.state.currentIndex === index ? 'active' : ''} ${this.state.hideView ? 'unblur' : ''}`} src={item} alt={''} />
                 )}
-                <div className="view">
+                <div className={`view ${this.state.hideView ? 'hidden' : ''}`}>
                     {this.state.images.map((item, index) => 
                         <div className={`slide ${this.state.currentIndex === index ? 'active' :
                         this.state.currentIndex >= index ? 'next' :
@@ -97,6 +102,11 @@ export default class Showcase extends Component {
                     </div>
                     <img src={arrow} id={'rightArrow'} onClick={this.nextSlide} alt={''}/>
                 </div>
+                {this.props.backgrounds &&
+                    <div className="hideView" onMouseEnter={this.showBackground} onMouseLeave={this.showBackground}>
+                        Show Background
+                    </div>
+                }
             </div>
         );
     }
