@@ -19,7 +19,7 @@ export default class Showcase extends Component {
     }
 
     nextSlide = () => {
-        if(this.state.currentIndex === this.state.images.length - 1) {
+        if(this.state.currentIndex === this.props.content.length - 1) {
             this.setState({currentIndex: 0})
             return;
         }
@@ -28,7 +28,7 @@ export default class Showcase extends Component {
 
     prevSlide = () => {
         if(this.state.currentIndex === 0) {
-            this.setState({currentIndex: this.state.images.length - 1})
+            this.setState({currentIndex: this.props.content.length - 1})
             return;
         }
         this.setState({currentIndex: this.state.currentIndex - 1});
@@ -73,22 +73,25 @@ export default class Showcase extends Component {
     }
 
     render() {
+        const slides = this.props.content;
+        
+
         return (
             <div className={`${this.props.backgrounds ? 'showcaseplus' : 'showcase'}`}>
                 {this.props.backgrounds && this.state.backgrounds.map((item, index) => 
                     <img className={`background ${this.state.currentIndex === index ? 'active' : ''} ${this.state.hideView ? 'unblur' : ''}`} src={item} alt={''} />
                 )}
                 <div className={`view ${this.state.hideView ? 'hidden' : ''}`}>
-                    {this.state.images.map((item, index) => 
+                    {slides.map((item, index) => 
                         <div className={`slide ${this.state.currentIndex === index ? 'active' :
                         this.state.currentIndex >= index ? 'next' :
                         this.state.currentIndex <= index ? 'prev' : ''}`} key={index}>
-                            <div className="image">
-                                <img src={item} alt={`View ${index}`}/>
+                            <div className="image" onClick={this.props.links ? this.props.links[index] : null}>
+                                <img src={item.image} alt={`View ${index}`}/>
                             </div>
                             <div className="text">
-                                <h2 className="title">{this.state.titles[index]}</h2>
-                                {this.state.text}
+                                <h2 className="title">{item.title}</h2>
+                                {item.text}
                             </div>
                         </div>
                     )}
@@ -96,7 +99,7 @@ export default class Showcase extends Component {
                 <div className="slideNav">
                     <img src={arrow} id={'leftArrow'} onClick={this.prevSlide} alt={''}/>
                     <div className="pipBox">
-                        {this.state.images.map((item, index) => 
+                        {slides.map((item, index) => 
                             <Pip key={index} active={this.state.currentIndex === index} onClick={() => this.setSlide(index)}/>
                         )}
                     </div>
