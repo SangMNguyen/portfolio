@@ -86,12 +86,16 @@ export default class Showcase extends Component {
                         <div className={`slide ${this.state.currentIndex === index ? 'active' :
                         this.state.currentIndex >= index ? 'next' :
                         this.state.currentIndex <= index ? 'prev' : ''}`} key={index}>
-                            <div className="image" onClick={this.props.links ? this.props.links[index] : null}>
+                            {item.link ? <a href={item.link} title={"Go to Github"} target="_blank" className="image">
                                 <img src={item.image} alt={`View ${index}`}/>
-                            </div>
+                            </a> : 
+                            <div className="image" title={this.props.backgrounds ? "No Github link attached." : ""}>
+                                <img src={item.image} alt={`View ${index}`}/>
+                            </div>}
                             <div className="text">
                                 <h2 className="title">{item.title}</h2>
                                 {item.text}
+                                {item.link && <a href={item.link} title={"Go to " + item.title} target="_blank" className="image"></a>}
                             </div>
                         </div>
                     )}

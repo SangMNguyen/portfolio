@@ -427,8 +427,6 @@ a {
 /* ***************************************************************************** BIOGRAPHY ************************************************************************************ */
 .view {
   overflow: hidden;
-  width: 100%;
-  height: 100%;
   transition: 0.5s;
 }
 
@@ -491,12 +489,14 @@ a {
 .slide .text {
   font-family: 'Montserrat', sans-serif;
   text-align: left;
-  font-size: 30px;
+  font-size: 25px;
   width: 50%;
   min-width: 25%;
   padding: 0 50px 0 50px;
   word-break: keep-all;
 }
+
+
 
 .slide.prev .text {
   transform: translate3d(0, -150%, 0) scale(0.7);
@@ -525,8 +525,9 @@ a {
 .slideNav {
   display: flex;
   flex-direction: row;
-  position: relative;
-  top: calc(50vh - 50px);
+  position: fixed;
+  bottom: 50px;
+  left: calc(50% - 100px);
   z-index: 20001;
   user-select: none;
 }
@@ -574,10 +575,12 @@ a {
 
 .showcaseplus .slide {
   overflow: hidden;
-  width: 60%;
+  width: 1152px;
   height: 60%;
-  top: 20%;
-  left: 20%;
+  left: 50%;
+  margin-left: -576px;
+  top: 50%;
+  margin-top: -300px;
   z-index: 1;
 }
 
@@ -585,12 +588,14 @@ a {
   opacity: 0;
   transition: 0.5s ease-out;
   transition-delay: 0.5s;
+  z-index: 0;
 }
 
 .showcaseplus .slide.active {
   opacity: 1;
   transition: 0.5s ease-in;
   transition-delay: 0.5s;
+  z-index: 100;
 }
 
 .showcaseplus .image {
@@ -600,7 +605,7 @@ a {
 .showcaseplus .slide.active .image, .showcaseplus .slide.active .text {
   transform: translate3d(0, 0, 0);
   transition: 1s ease-out;
-  z-index: 10;
+  z-index: 100;
 }
 
 .showcaseplus .slide.next .image, .showcaseplus .slide.prev .text {
@@ -619,13 +624,13 @@ a {
 
 .showcaseplus .text {
   font-size: 25px;
-  padding: 0px 50px;
+  padding: 50px;
   color: black;
   background-color: white;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hideView {
@@ -662,7 +667,7 @@ a {
   transition: 0.3s;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1500px) {
   .showcase .text {
     font-size: 25px;
   }
@@ -672,7 +677,7 @@ a {
   }
 
   .showcaseplus .text {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .showcaseplus .title {
