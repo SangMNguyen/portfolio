@@ -86,7 +86,7 @@ export default class Showcase extends Component {
                         <div className={`slide ${this.state.currentIndex === index ? 'active' :
                         this.state.currentIndex >= index ? 'next' :
                         this.state.currentIndex <= index ? 'prev' : ''}`} key={index}>
-                            {item.link ? <a href={item.link} title={"Go to Github"} target="_blank" className="image">
+                            {item.link ? <a href={item.link} title={"Go to Github"} target="_blank" rel="noopener noreferrer" className="image">
                                 <img src={item.image} alt={`View ${index}`}/>
                             </a> : 
                             <div className="image" title={this.props.backgrounds ? "No Github link attached." : ""}>
@@ -95,7 +95,7 @@ export default class Showcase extends Component {
                             <div className="text">
                                 <h2 className="title">{item.title}</h2>
                                 {item.text}
-                                {item.link && <a href={item.link} title={"Go to " + item.title} target="_blank" className="image"></a>}
+                                {item.link && <a href={item.link} title={"Go to " + item.title} target="_blank" rel="noopener noreferrer" className="image"></a>}
                             </div>
                         </div>
                     )}
