@@ -36,8 +36,8 @@ const content = [
         title: 'Discord Bot',
         text: `Discord bots are simply helpers or additional forms of entertainment for a Discord
         Server. There are many Discord bots that offer different features and the intention of
-        my bot was to have a combination of these features, readily available. Currently, the
-        bot offers many recreational options like games (blackjack, rock/paper/scissors, etc.)`,
+        my bot was to have a combination of these features, readily available, like blackjack,
+        rock/paper/scissors, etc.`,
         link: 'https://github.com/SangMNguyen/DiscordBot',
     }, {
         image: Image4,
