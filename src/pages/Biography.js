@@ -10,33 +10,31 @@ const content = [
     {
         image: Image1,
         title: 'Who Am I?',
-        text: `My name is Sang Minh Nguyen. I am of Vietnamese descent, and a front-end
-        developer based in the New Jersey area. I moved from Vietnam at a young age,
-        but growing up the United States has been mostly rewarding, given the resources 
-        and opportunities that have opened up for me. I moved around a lot as a kid, but
-        I settled down in New Jersey and quite late into my academic career, decided to
-        be a programmer.`,
+        text: `
+        My name is Sang Minh Nguyen, and I am a front-end developer based 
+        in the New Jersey area. I moved from Vietnam to the US at a young 
+        age, and in doing so, has been mostly rewarding. Growing up in the US 
+        has given me the education and opportunities to make the decision to 
+        pursue Computer Science as a career.`,
     },
     {
         image: Image2,
         title: 'Why Development?',
-        text: `I love creating things ever since I was a kid. I'd always play with Legos and 
-        loved every step of the process from designing to building. As a result, I pursued 
-        Architecture in highschool, believing it to be my passion. Although it was a 
-        fascinating field, I found that the creativity can be limited. Thus, my attention 
-        turned to the world of programming. I quickly fell in love with it. It appealed 
-        with my ability to recognize patterns and I've felt no better place to use that. 
-        It's also an amazing outlet to release my creativity as well as my love for solving 
-        logic puzzles.`,
+        text: `All my life, I have known that the potential for innovation and creativity 
+        are absolute necessites in a career. As a kid, I'd always play with Legos 
+        and loved every step of the process from designing to building. As a 
+        result, I pursued Architecture in highschool, believing it to be my 
+        passion. However, I realized it was not quite what I had hoped. Thus, my 
+        attention turned to the world of programming, and it fueled my 
+        ambition for creativity while also challenging me to grow as a creator.`,
     },
     {
         image: Image3,
         title: 'What Else Do I Do?',
         text: `In addition to design and development, I also enjoy other hobbies and
-        activities. In my sparetime, I play video games of all types, ranging from casual
-        puzzles to competitive tactical shooters. Additionally, I enjoy working out as well 
-        as hiking, often dabbling in a bit of photography, typically taking landscapes in 
-        scenic areas whenever I travel elsewhere. Furthermore, I love writing stories, 
+        activities in my sparetime. I play a variety of video games, with focuses 
+        on gameplay mechanics and story-telling. Additionally, I enjoy working out as well 
+        as hiking and amateur photography. Furthermore, I love writing stories, 
         oftenly in the form of screenplays and scripts. One day, I do aspire to direct and 
         produce those stories into actual films. I also enjoy karaoke tremendously despite 
         not being that good of a singer.`,
@@ -44,13 +42,14 @@ const content = [
     {
         image: Image4,
         title: 'My Aspirations for Life',
-        text: `What is the overall goal for my work? I'm not exactly someone who's pursuing 
-        this career for its salary value or status. I enjoy the work that I do, but I 
-        especially enjoy seeing my projects being used as intended (or for better) after 
-        deployment. I'd like to expand my career farther then a simple front-end developer, 
-        and look into projects with other areas from Artificial Intelligence to Game Design.
-        My next projects are a bit ambitious, but it only adds to my excitement and motivation. 
-        I hope to be able to participate in more projects that help better the world.`,
+        text: `I'm not exactly someone who's pursuing this career for its salary value 
+        or status. I enjoy the work that I do, but I especially enjoy seeing my 
+        projects being used as intended (or for better) after deployment. I'd like 
+        to expand my career farther then a simple front-end developer, and 
+        look into projects with other areas from Artificial Intelligence to Game 
+        Design. My next projects are a bit ambitious, but it only adds to my 
+        excitement and motivation. I hope to be able to participate in more 
+        projects that help better the world.`,
     }
 ];
 
