@@ -27,6 +27,7 @@ const content = [
         was finished, and it is a fully functional 
         local 2-player game.`,
         link: 'https://github.com/SangMNguyen/Pong', 
+        linkColor: "green",
     }, {
         image: Image2,
         title: 'Project GG',
@@ -39,6 +40,7 @@ const content = [
         academic and work responsibilities. We 
         intend on resuming this project.`,
         link: 'https://github.com/sangmattxavier/Project-GG',
+        linkColor: "orange"
     }, {
         image: Image3,
         title: 'Discord Bot',
@@ -47,6 +49,7 @@ const content = [
         my bot was to have a combination of these features, readily available, like blackjack,
         rock/paper/scissors, etc.`,
         link: 'https://github.com/SangMNguyen/DiscordBot',
+        linkColor: "purple"
     }, {
         image: Image4,
         title: 'Thought4Thought',

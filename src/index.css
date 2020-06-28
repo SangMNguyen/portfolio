@@ -102,7 +102,7 @@ a {
 
 #resume {
   margin: 0 0 0 25px;
-  font-size: 40px;
+  font-size: 2.2rem;
   font-family: 'NeueHelvetica';
 }
 
@@ -246,7 +246,7 @@ a {
   background-position: right bottom;
 }
 
-#linkedin:hover, #github:hover {
+#linkedin:hover, #github:hover, #github.green:hover, #github.orange:hover, #github.purple:hover {
   background-position: left bottom;
   transition: all 0.5s ease;
 }
@@ -492,7 +492,7 @@ a {
   font-size: 1.5rem;
   width: 50%;
   min-width: 25%;
-  padding: 0 50px 0 50px;
+  padding: 0 3.15rem 0 3.15rem;
   word-break: keep-all;
 }
 
@@ -526,7 +526,7 @@ a {
   display: flex;
   flex-direction: row;
   position: fixed;
-  bottom: 50px;
+  bottom: 3.15rem;
   left: calc(50% - 100px);
   z-index: 20001;
   user-select: none;
@@ -572,6 +572,28 @@ a {
   margin: 0 -12px 0 0;
   transition: 0.3s ease-in-out;
 }
+
+.poof {
+  opacity: 0;
+  transform: scale(0) !important;
+  transition: 0.3s;
+}
+
+.appear {
+  opacity: 1;
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+.emailAddress img.poof {
+  margin-right: -5rem;
+}
+
+.emailAddress img.appear {
+  margin-right: 1rem;
+}
+
+/* ***************************************************************************** PROJECTS ************************************************************************************ */
 
 .showcaseplus .slide {
   overflow: hidden;
@@ -625,7 +647,7 @@ a {
 
 .showcaseplus .text {
   font-size: 1.5rem;
-  padding: 50px;
+  padding: 3.15rem;
   color: black;
   background-color: white;
   height: 100%;
@@ -672,6 +694,27 @@ a {
   transition: 0.3s;
 }
 
+#github.green {
+  background: linear-gradient(to right, #46FF52 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: 0.3s;
+}
+
+#github.orange {
+  background: linear-gradient(to right, #EA6341, #2C265A 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: 0.3s;
+}
+
+#github.purple {
+  background: linear-gradient(to right, #7289DA 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: 0.3s;
+}
+
 @media (max-width: 1500px), (max-height: 800px) {
   .showcase .text {
     font-size: 1.25rem;
@@ -689,10 +732,6 @@ a {
     font-size: 2.5rem !important;
   }
 }
-
-/* ***************************************************************************** PROJECTS ************************************************************************************ */
-
-
 
 /* ***************************************************************************** CONTACT ************************************************************************************ */
 
@@ -799,33 +838,71 @@ a {
   opacity: 1 !important;
 }
 
-.contact .emailForm button {
+.contact .emailForm button, .sendEmail {
   border: 3px solid white;
-  padding: 10px 0;
+  padding: 0.75rem 2.25rem;
   border-radius: 25px;
   background: linear-gradient(to bottom, white 50%,transparent 50%);
   background-size: 100% 200%;
   background-position: left bottom;
   color: white;
-  width: 200px;
-  margin: 15px;
   font-weight: 600;
   transition: 0.3s ease-in-out;
   position: static;
+  user-select: none;
 }
 
-.contact .emailForm button:hover {
+.contact .emailForm button:hover, .sendEmail:hover {
   transition: 0.3s ease-in-out;
   background-position: left top;
-  font-size: 20px;
-  padding: 10px 0px;
-  width: 210px;
-  margin: 12px;
+  font-size: 1.25rem;
+  margin: -0.20rem;
   color: black;
 }
 
 .contact .selfEmail {
   margin: 15px 0 0 0;
+}
+
+.emailAddress {
+  position: relative;
+  font-size: 2rem;
+  user-select: text;
+  cursor: pointer;
+}
+
+.emailAddress img {
+  max-width: 5rem;
+  padding: 0.5rem;
+  border: 0.25rem solid white;
+  border-radius: 50px;
+  margin-right: 1rem;
+  user-select: none;
+}
+
+.bubble {
+  font-size: 1.25rem;
+  background-color: white;
+  color: black;
+  padding: 0.5rem 0.5rem 0.75rem 0.5rem;
+  border-radius: 20px;
+  margin-left: -5rem;
+  user-select: none;
+}
+
+.bubble.appear {
+  margin-left: 1rem;
+}
+
+.bubble.appear::after {
+  content: "";
+  position: absolute;
+  top: 2.125rem;
+  right: 4rem;
+  margin-right: 20px;
+  border-width: 7.5px;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
 }
 
 /* Testing Transitions */

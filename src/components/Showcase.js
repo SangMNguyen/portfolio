@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Pip from './Pip';
 
 const arrow = require("../assets/arrowhead.svg");
+const githubDark = require("../assets/githubDark.png");
 
 export default class Showcase extends Component {
     constructor(props) {
@@ -86,7 +87,7 @@ export default class Showcase extends Component {
                         <div className={`slide ${this.state.currentIndex === index ? 'active' :
                         this.state.currentIndex >= index ? 'next' :
                         this.state.currentIndex <= index ? 'prev' : ''}`} key={index}>
-                            {item.link ? <a href={item.link} title={"Go to Github"} target="_blank" rel="noopener noreferrer" className="image">
+                            {item.link ? <a href={item.link} title={"Go to Repository"} target="_blank" rel="noopener noreferrer" className="image">
                                 <img src={item.image} alt={`View ${index}`}/>
                             </a> : 
                             <div className="image" title={this.props.backgrounds ? "No Github link attached." : ""}>
@@ -95,23 +96,51 @@ export default class Showcase extends Component {
                             <div className="text">
                                 <h2 className="title">{item.title}</h2>
                                 {item.text}
-                                {item.link && <a href={item.link} title={"Go to " + item.title} target="_blank" rel="noopener noreferrer" className="image"></a>}
+                                {item.link && 
+                                <a href={item.link} 
+                                title={"Go to " + item.title} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className={item.linkColor}
+                                id="github"
+                                style={{
+                                    height: "4rem", 
+                                    width: "4rem", 
+                                    padding: "0.375rem", 
+                                    borderRadius: "10px", 
+                                    position: "absolute", 
+                                    bottom: "3.15rem", 
+                                    right: "3.15rem"}}>
+                                    <img src={githubDark} 
+                                    alt="Github Link" 
+                                    title="Go to Repository"/>
+                                </a>}
                             </div>
                         </div>
                     )}
                 </div>
                 <div className="slideNav">
-                    <img src={arrow} id={'leftArrow'} onClick={this.prevSlide} alt={''}/>
+                    <img src={arrow} id={'leftArrow'} 
+                    className={this.state.currentIndex === 0 ? "poof" : "appear"} 
+                    onClick={this.prevSlide} 
+                    title="Go Back" 
+                    alt={''}/>
                     <div className="pipBox">
                         {slides.map((item, index) => 
-                            <Pip key={index} active={this.state.currentIndex === index} onClick={() => this.setSlide(index)}/>
+                            <Pip key={index} active={this.state.currentIndex === index} title={"Slide " + (index + 1)} onClick={() => this.setSlide(index)}/>
                         )}
                     </div>
-                    <img src={arrow} id={'rightArrow'} onClick={this.nextSlide} alt={''}/>
+                    <img src={arrow} id={'rightArrow'} 
+                    className={this.state.currentIndex === this.props.content.length - 1 ? "poof" : "appear"} 
+                    onClick={this.nextSlide} 
+                    title="Next Slide" alt={''}/>
                 </div>
                 {this.props.backgrounds &&
-                    <div className="hideView" onMouseEnter={this.showBackground} onMouseLeave={this.showBackground}>
-                        Show Background
+                    <div className="hideView" 
+                    title="Hover to See Background" 
+                    onMouseEnter={this.showBackground} 
+                    onMouseLeave={this.showBackground}>
+                        Hover Here
                     </div>
                 }
             </div>
