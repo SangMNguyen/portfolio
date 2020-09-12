@@ -62,6 +62,19 @@ export default class Biography extends Component {
                 <div className={`biography`}>
                     <Showcase content={content}/>
                 </div>
+                <a
+                    href={"https://www.littleghostpictures.com/"}
+                    target={"_blank"}
+                    style={{
+                        position: "absolute",
+                        left: "70%",
+                        bottom: "3rem",
+                        zIndex: "99999"
+                    }}
+                    className={"link"}
+                >
+                    Pictures by Little Ghost Pictures
+                </a>
             </div>
         );
     }

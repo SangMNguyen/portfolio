@@ -206,7 +206,7 @@ a {
   transition: 0.5s;
 }
 
-.center.show a::after, .links a::after {
+.center.show a::after, .links a::after, .link::after {
   content: '';
   display: block;
   width: 0;
@@ -216,7 +216,7 @@ a {
   opacity: 0.7;
 }
 
-.center.show a:hover::after, .center.show .active::after, .links a:hover::after {
+.center.show a:hover::after, .center.show .active::after, .links a:hover::after, .link:hover::after {
   width: 100%;
   opacity: 1;
 }
@@ -391,7 +391,7 @@ a {
   justify-content: space-around;
 }
 
-.links a {
+.links a, .link {
   padding-top: 10px;
   opacity: 0.7;
   color: white;
@@ -401,7 +401,7 @@ a {
   transition: 0.3s;
 }
 
-.links a:hover {
+.links a:hover, .link:hover {
   color: white;
   text-decoration: none;
   opacity: 1;
