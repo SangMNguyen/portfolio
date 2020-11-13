@@ -9,7 +9,7 @@ export default class Home extends Component {
                 <h3 id="typing">I am</h3>
                 <h1>SANG M. NGUYEN</h1>
                 <div className="links">
-                    <Link to="/bio" title="View Biography">Biography</Link>
+                    <Link to="/about" title="View About Me">About Me</Link>
                     <Link to="/projects" title="View Projects">Projects</Link>
                     <Link to="/contact" title="View Contact Info">Contact</Link>
                 </div>
