@@ -63,7 +63,6 @@ const Showcase = props => {
         return () => document.removeEventListener("keydown", handleKey, false);
     }, [handleKey]);
 
-        
     return (
         <div className={`${backgrounds ? 'showcaseplus' : 'showcase'}`}>
             {backgrounds && backgrounds.map((item, index) => 
@@ -79,7 +78,12 @@ const Showcase = props => {
                         {item.link ? <a href={item.link} title={"Go to Repository"} target="_blank" rel="noopener noreferrer" className="image">
                             <img src={item.image} key={"github" + index} alt={`View ${index}`}/>
                         </a> : 
-                        <div className="image" title={backgrounds ? "No Github link attached." : ""}>
+                        item.customImg ? <div className={`constImg`}>
+                            <div className="propic">
+                                <img src={item.customImg} key={"biopic"} alt={`Picture of Me`}/>
+                            </div>
+                        </div> :  
+                        <div className={`image`} title={backgrounds ? "No Github link attached." : ""}>
                                 <img src={item.image} key={"github" + index} alt={`View ${index}`}/>
                         </div>}
                         <div className="text">

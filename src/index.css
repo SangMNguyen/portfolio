@@ -462,7 +462,7 @@ a {
   transition: 0.4s;
 }
 
-.slide.next .text, .slide.next .image {
+.slide.next .text, .slide.next .image, .slide.next .constImg {
   transform: translate3d(0,150%,0) scale(0.7); 
   transition: 0.5s ease-in;
 }
@@ -474,7 +474,7 @@ a {
   transition-delay: 0.35s;
 }
 
-.slide.active .text, .slide.active .image {
+.slide.active .text, .slide.active .image, .slide.active .constImg {
   transform: translate3d(0,0,0) scale(1);
   transition: 0.9s ease;
   transition-delay: 0.25s;
@@ -512,12 +512,37 @@ a {
 }
 
 .slide .image {
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  max-width: 50%;
+  user-select: none;
+}
+
+.slide .constImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 50%;
   user-select: none;
 }
 
-.slide.prev .image {
+.constImg .propic {
+  height: auto;
+  width: auto;
+  max-height: 30rem;
+  max-width: 30rem;
+  border-radius: 20rem;
+  overflow: hidden;
+}
+
+.propic img {
+  position: relative;
+  bottom: 6rem;
+}
+
+.slide.prev .image, .slide.prev .constImg {
   transform: translate3d(0, -75%, 0) scale(0.7);
   transition: 0.5s ease-in;
 }
@@ -665,6 +690,8 @@ a {
 }
 
 .showcaseplus .image {
+  height: 100%;
+  width: 50%;
   overflow: hidden;
 }
 

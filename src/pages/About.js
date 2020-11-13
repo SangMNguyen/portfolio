@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Showcase from '../components/Showcase';
 
-const Image1 = require('../assets/bio1.jpg');
-const Image3 = require('../assets/bio3.jpg');
+const Image1 = require('../assets/propic.jfif');
+const Image2 = require('../assets/stock.jfif');
 
 const content = [
     {
-        image: Image1,
+        customImg: Image1,
         title: 'About Me',
         text: `I am a Full Stack Software Engineer recently graduated from New Jersey 
         Institute of Technology. My current residence is located in New Jersey. I have
@@ -18,7 +18,7 @@ const content = [
         Series).`,
     },
     {
-        image: Image3,
+        image: Image2,
         title: 'Technical Skills',
         text: <>
             <ul>
@@ -53,6 +53,20 @@ const content = [
     }
 ];
 
+// const credit = <a
+//     href={"https://www.littleghostpictures.com/"}
+//     target={"_blank"}
+//     style={{
+//         position: "absolute",
+//         left: "70%",
+//         bottom: "3rem",
+//         zIndex: "99999"
+//     }}
+//     className={"link"}
+//     >
+//         Pictures by Little Ghost Pictures
+//     </a>
+
 const About = () => {
     return (
         <div>
@@ -64,19 +78,6 @@ const About = () => {
                     nextAdj
                 />
             </div>
-            <a
-                href={"https://www.littleghostpictures.com/"}
-                target={"_blank"}
-                style={{
-                    position: "absolute",
-                    left: "70%",
-                    bottom: "3rem",
-                    zIndex: "99999"
-                }}
-                className={"link"}
-            >
-                Pictures by Little Ghost Pictures
-            </a>
         </div>
     );
 }
