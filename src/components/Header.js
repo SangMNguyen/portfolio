@@ -18,7 +18,7 @@ export default class Header extends Component {
                     </a>
                 </div>
                 <div className={`center ${!this.props.home ? 'show' : ''}`}>
-                    <Link to="/bio" className={this.props.curLoc === '/bio' ? 'active' : ''} title="View Biography">BIOGRAPHY</Link>
+                    <Link to="/about" className={this.props.curLoc === '/about' ? 'active' : ''} title="View About Me">ABOUT ME</Link>
                     <Link to="/projects" className={this.props.curLoc === '/projects' ? 'active' : ''} title="View Projects">PROJECTS</Link>
                     <Link to="/contact" className={this.props.curLoc === '/contact' ? 'active' : ''} title="View Contact Info">CONTACT</Link>
                 </div>
