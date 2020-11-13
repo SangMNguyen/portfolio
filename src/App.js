@@ -6,7 +6,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import Home from './pages/Home';
-import Biography from './pages/Biography';
+import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
@@ -48,8 +48,8 @@ class App extends Component {
             >
               <Switch location={this.props.location}>
                 <Route exact path="/" component={Home}/>
-                <Route path="/bio" component={Biography}/>
-                <Route path="/projects" component={Projects}/>
+                <Route path="/about" component={About}/>
+                <Route path="/projects/:id?" component={Projects}/>
                 <Route path="/contact" component={Contact}/>
               </Switch>
             </CSSTransition>
