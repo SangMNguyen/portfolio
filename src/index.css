@@ -525,9 +525,11 @@ a {
 .slideNav {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   position: fixed;
+  left: 0;
+  width: 100%;
   bottom: 3.15rem;
-  left: calc(50% - 100px);
   z-index: 20001;
   user-select: none;
 }
@@ -551,6 +553,9 @@ a {
 }
 
 .slideNav #leftArrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }
@@ -562,6 +567,9 @@ a {
 }
 
 .slideNav #rightArrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   transform: scaleX(-1);
   transition: 0.3s ease-in-out;
   cursor: pointer;
@@ -571,6 +579,42 @@ a {
   padding: 0 12px 0 0;
   margin: 0 -12px 0 0;
   transition: 0.3s ease-in-out;
+}
+
+.slideNav .rightLink, .slideNav .leftLink {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.slideNav .leftLink.shown {
+  transform: scale(1);
+  margin-right: 0;
+  transition: 0.3s;
+}
+
+.slideNav .rightLink.shown, .slideNav .rightLink.adjust.shown {
+  transform: scale(1) rotateY(180deg);
+  margin-right: 0;
+  transition: 0.3s;
+}
+
+.slideNav .rightLink {
+  transform: scale(0) rotateY(180deg);
+  margin-right: -6.5rem;
+  margin-left: 12px;
+  transition: 0.3s;
+}
+
+.slideNav .rightLink.adjust {
+  margin-right: -4.25rem;
+}
+
+.slideNav .leftLink {
+  transform: scale(0);
+  margin-right: -5.7rem;
+  margin-left: 12px;
+  transition: 0.3s;
 }
 
 .poof {
@@ -864,7 +908,17 @@ a {
   margin: 15px 0 0 0;
 }
 
-.emailAddress {
+.phoneNumber  {
+  cursor: default !important;
+}
+
+.phoneNumber img {
+  width: 5rem;
+  height: 5rem;
+  margin-right: 1rem;
+}
+
+.emailAddress, .phoneNumber {
   position: relative;
   font-size: 2rem;
   user-select: text;
