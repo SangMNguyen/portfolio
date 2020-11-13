@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f706156e97ddef2e6f7ed42ec8df7d4a",
+    "revision": "489738d21fb3cd3087147dd23cba622c",
     "url": "/portfolio/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "57a5623b484146a9233a",
-    "url": "/portfolio/static/css/main.35566c91.chunk.css"
+    "revision": "2737d990144afcf666f0",
+    "url": "/portfolio/static/css/main.344f3113.chunk.css"
   },
   {
     "revision": "dc6a247c881b74ec49b5",
     "url": "/portfolio/static/js/2.7cbec0b3.chunk.js"
   },
   {
-    "revision": "57a5623b484146a9233a",
-    "url": "/portfolio/static/js/main.c02949a1.chunk.js"
+    "revision": "2737d990144afcf666f0",
+    "url": "/portfolio/static/js/main.fedeb8ba.chunk.js"
   },
   {
     "revision": "fb567781209e4c0902bd",
@@ -30,14 +30,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "316f108d2a7db4ee40b4458921783f79",
     "url": "/portfolio/static/media/arrowhead.316f108d.svg"
-  },
-  {
-    "revision": "966df0c0e962865dfbb0767139c374d1",
-    "url": "/portfolio/static/media/bio1.966df0c0.jpg"
-  },
-  {
-    "revision": "61c1ab1c8b8471eba6a651c52b95a5a6",
-    "url": "/portfolio/static/media/bio3.61c1ab1c.jpg"
   },
   {
     "revision": "562557ff691469c12791bb68d53c39e0",
@@ -56,11 +48,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/media/pong.a2b6fe21.gif"
   },
   {
+    "revision": "bd7c46a0d703aea361dab1457466870c",
+    "url": "/portfolio/static/media/stock.bd7c46a0.jfif"
+  },
+  {
     "revision": "60a28b45e4102130951c3aabbe160923",
     "url": "/portfolio/static/media/t4tback.60a28b45.png"
   },
   {
     "revision": "32f996b6926aad7fd8731a07d54b66ae",
     "url": "/portfolio/static/media/t4timg.32f996b6.png"
+  },
+  {
+    "revision": "5c6338ed50caa44e461bd3abe87755b6",
+    "url": "/portfolio/static/media/test3.5c6338ed.jfif"
   }
 ]);
