@@ -75,7 +75,7 @@ const Showcase = props => {
                         curIndex <= index ? 'prev' : ''}`} 
                         key={"slide" + index}
                     >
-                        {item.link ? <a href={item.link} title={"Go to Repository"} target="_blank" rel="noopener noreferrer" className="image">
+                        {item.link ? <a href={item.link} title={item.notGithub ? "Visit Project" : "Go to Repository"} target="_blank" rel="noopener noreferrer" className="image">
                             <img src={item.image} key={"github" + index} alt={`View ${index}`}/>
                         </a> : 
                         item.customImg ? <div className={`constImg`}>
@@ -87,7 +87,7 @@ const Showcase = props => {
                                 <img src={item.image} key={"github" + index} alt={`View ${index}`}/>
                         </div>}
                         <div className="text">
-                            <h2 className="title">{item.title}</h2>
+                            <h2 className={`title ${item.notGithub ? "adj" : ""}`}>{item.title}</h2>
                             {item.text}
                             {item.link && 
                             <a 
@@ -108,9 +108,9 @@ const Showcase = props => {
                                 }}
                             >
                                 <img 
-                                    src={githubDark} 
+                                    src={item.notGithub ? item.linkPic : githubDark} 
                                     alt="Github Link" 
-                                    title="Go to Repository"
+                                    title={item.notGithub ? "Visit Website" : "Go to Repository"}
                                 />
                             </a>}
                         </div>

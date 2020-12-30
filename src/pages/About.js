@@ -12,7 +12,7 @@ const content = [
         text: `I am a Full Stack Software Engineer recently graduated from New Jersey 
         Institute of Technology. My current residence is located in New Jersey. I have
         industry experience in creating multiple web applications starting with
-        requirements gathering, designing, developing, refactoring, and code implmentation. 
+        requirements gathering, designing, developing, refactoring, and code implementation. 
         Outside of work, I like to play a variety of video games, especially with the ones
         with strong focus on gameplay, mechanics, and an immersive storyline (Uncharted  
         Series).`,
@@ -23,7 +23,7 @@ const content = [
         text: <>
             <ul>
                 <li>
-                    Front-End: React, JSX, JavaScript, .LESS, HTML5, JSON, Material-UI,
+                    Front-End: React.js, JSX, ES6, JavaScript, .LESS, HTML5, CSS3, JSON, Material-UI,
                     Zeplin, AdobeXD, Figma, RESTful API, Axios/Fetch, Vue.js, Electron.js,
                     Redux
                 </li>
@@ -39,13 +39,16 @@ const content = [
                 <h1>Project Links</h1>
                 <ul>
                     <li>
-                        <Link to="/projects/1">Thought4Thought</Link>
+                        <Link to="/projects/1">jordangrossphotography.com</Link>
                     </li>
                     <li>
-                        <Link to="/projects/2">Pong</Link>
+                        <Link to="/projects/2">Thought4Thought</Link>
                     </li>
                     <li>
-                        <Link to="/projects/3">Discord</Link>
+                        <Link to="/projects/3">Pong</Link>
+                    </li>
+                    <li>
+                        <Link to="/projects/4">Discord</Link>
                     </li>
                 </ul>
             </div>
