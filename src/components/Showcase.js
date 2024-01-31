@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Pip from './Pip';
 
-const arrow = require("../assets/arrowhead.svg");
+import { ReactComponent as Arrow } from '../assets/arrowhead.svg';
 const githubDark = require("../assets/githubDark.png");
 
 const Showcase = props => {
@@ -88,6 +88,7 @@ const Showcase = props => {
                         </div>}
                         <div className="text">
                             <h2 className={`title ${item.notGithub ? "adj" : ""}`}>{item.title}</h2>
+                            {item.subtext && <p className={`subtext`}>{item.subtext}</p>}
                             {item.text}
                             {item.link && 
                             <a 
@@ -119,12 +120,10 @@ const Showcase = props => {
             </div>
             <div className={`slideNav`}>
                 <div id={'leftArrow'}>
-                    <img 
-                        src={arrow}
+                    <Arrow
                         className={curIndex === 0 && !props.prevLoc ? "poof" : "appear"} 
                         onClick={prevSlide} 
-                        title="Go Back" 
-                        alt={''}
+                        title="Go Back"
                     />
                     {props.prevLoc && <Link className={`leftLink ${curIndex === 0 ? "shown" : ""}`} to={props.prevLoc}>{props.prevLocName}</Link>}
                 </div>
@@ -134,12 +133,10 @@ const Showcase = props => {
                     )}
                 </div>
                 <div id={'rightArrow'}>
-                    <img 
-                        src={arrow} 
+                    <Arrow
                         className={curIndex === slides.length - 1 && !props.nextLoc ? "poof" : "appear"} 
                         onClick={nextSlide} 
-                        title="Next Slide" 
-                        alt={''}
+                        title="Next Slide"
                     />
                     {props.nextLoc && <Link className={`rightLink ${curIndex === slides.length - 1 ? "shown" : ""} ${props.nextAdj ? "adjust" : ""}`} to={props.nextLoc}>{props.nextLocName}</Link>}
                 </div>
@@ -151,7 +148,7 @@ const Showcase = props => {
                     onMouseEnter={() => setView(true)} 
                     onMouseLeave={() => setView(false)}
                 >
-                    Hover Here
+                    View Background
                 </div>
             }
         </div>
