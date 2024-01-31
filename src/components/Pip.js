@@ -1,21 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export default class Pip extends Component {
-    constructor(props) {
-        super(props);
+const Pip = ({ active, onClick, title }) => {
 
-        this.state = {
-            color: this.props.color,
-        }
-    }
-
-    render() {
-        return (
-            <div className={`pip ${this.props.active ? 'active' : ''}`} onClick={this.props.onClick} title={this.props.title}>
-                <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32">
-                    <circle cx="16" cy="16" r="8" stroke="white" strokeWidth="2" fill="none" />
-                </svg>
-            </div>
-        );
-    }
+    return (
+        <div className={`pip ${active ? 'active' : ''}`} onClick={onClick} title={title}>
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32">
+                <circle cx="16" cy="16" r="8" stroke="white" strokeWidth="2" fill="none" />
+            </svg>
+        </div>
+    );
 }
+
+export default Pip;
