@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import LinkedIn from '../assets/linkedin.png';
 import Github from '../assets/github.png';
 import ResumeIcon from '../assets/resume.png';
@@ -9,8 +9,7 @@ import Resume from '../assets/Resume.pdf';
 
 const Header = ({ home, curLoc}) => {
 
-
-    return(
+    return (
         <div className={`header`}>
             <div className={`left ${home ? '' : 'show'}`}>
                 <Link to="/" title="Back to Title Page"><Logo color="white"/></Link>
