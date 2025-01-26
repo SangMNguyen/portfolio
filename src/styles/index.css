@@ -27,7 +27,7 @@
 @import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
 @font-face {
   font-family: 'NeueHelvetica';
-  src: url('./fonts/helveticaneue.ttf') format('truetype');
+  src: url('../fonts/helveticaneue.ttf') format('truetype');
 }
 
 html {
@@ -278,7 +278,7 @@ a {
   width: 100vw;
   height: 40vh;
   color: var(--black);
-  background: url('./assets/gridplum.png') repeat 0 0;
+  background: url('../assets/gridplum.png') repeat 0 0;
   user-select: none;
 
   animation: bg-anim 3s infinite;
