@@ -42,7 +42,7 @@ body {
 }
 ::selection {
   background: #FCFC4B;
-  color: black;
+  color: var(--black);
 }
 
 .container {
@@ -80,7 +80,7 @@ a {
 #logoRing {
   fill: none;
   stroke-width: 5px;
-  stroke: white;
+  stroke: var(--white);
   stroke-dasharray: 300 300;
   stroke-dashoffset: 300;
   transition: stroke-dashoffset 0.75s ease;
@@ -91,7 +91,7 @@ a {
 }
 
 .logo:active #logoRing {
-  fill: white;
+  fill: var(--white);
 }
 
 .logo:active span {
@@ -135,7 +135,7 @@ a {
 }
 
 .header a {
-  color: white;
+  color: var(--white);
   text-decoration: none;
   opacity: 0.7;
   transition: 0.3s;
@@ -143,7 +143,7 @@ a {
 }
 
 .header a:hover {
-  color: white;
+  color: var(--white);
   text-decoration: none;
   opacity: 1.0;
   transition: 0.3s;
@@ -163,7 +163,7 @@ a {
 }
 
 .header .left a {
-  color: white;
+  color: var(--white);
 }
 
 .header .left.show {
@@ -277,7 +277,7 @@ a {
   font-size: 3.5rem;
   width: 100vw;
   height: 40vh;
-  color: black;
+  color: var(--black);
   background: url('./assets/gridplum.png') repeat 0 0;
   user-select: none;
 
@@ -292,19 +292,31 @@ a {
   width: 0px;
   overflow: hidden;
   white-space: pre;
-  animation: typewrite 32s steps(12) infinite normal,
+  animation: typewrite 24s steps(12) infinite normal,
     caret 1s steps(2) infinite normal;
 }
 
 /******************** TYPING ANIMATION *********************/
+/*
+  width: 3px is base for 'I am'
+  content is the text to display
+  animation-timing-function steps are equal to the number of characters in the string.
+  Note: the number of characters in the 'designer' entry is equal to the default value
+  Precentages are calculated where each entry takes up a quarter of the total (25%)
+  That is further split down as each entry has 4 animation actions:
+  Type out, pause, backspace, pause
+  I've manipulated the values (still contained within the 25%) to mimic a user
+  naturally typing it out and then holding the 'backspace' key.
+*/
+
 @keyframes typewrite {
   0%, 18.75% {
     width: 3px;
     content: ' a designer.';
   }
 
-  6.25%, 12.5% {
-    width: 6.66em;
+  9%, 15% {
+    width: 25.5rem;
     content: ' a designer.';
   }
 
@@ -314,8 +326,8 @@ a {
     animation-timing-function: steps(14);
   }
 
-  31.25%, 37.5% {
-    width: 7.74em;
+  34%, 40% {
+    width: 29.75rem;
     content: ' an innovator.';
     animation-timing-function: steps(14);
   }
@@ -326,8 +338,8 @@ a {
     animation-timing-function: steps(16);
   }
 
-  56.25%, 62.5% {
-    width: 8.86em;
+  59%, 65% {
+    width: 33.85rem;
     content: ' a collaborator.';
     animation-timing-function: steps(16);
   }
@@ -338,8 +350,8 @@ a {
     animation-timing-function: steps(13);
   }
 
-  81.25%, 87.5% {
-    width: 7.18em;
+  84%, 90% {
+    width: 27.55rem;
     content: ' a developer.';
     animation-timing-function: steps(13);
   }
@@ -370,8 +382,8 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: black;
-  color: white;
+  background-color: var(--black);
+  color: var(--white);
   font-family: 'Cinzel', serif;
   /* Abel, Cinzel, Old Standard TT, Cardo, Nanum Myeongjo, Yeseva One, Prata, Cormorant, Abhaya Libre, Oranienbaum, Gilda Display, Libre Caslon Display */
   z-index: 1;
@@ -394,7 +406,7 @@ a {
 .links a, .link {
   padding-top: 10px;
   opacity: 0.7;
-  color: white;
+  color: var(--white);
   font-size: 1.5rem;
   font-family: 'NeueHelvetica';
   text-decoration: none;
@@ -402,14 +414,14 @@ a {
 }
 
 .links a:hover, .link:hover {
-  color: white;
+  color: var(--white);
   text-decoration: none;
   opacity: 1;
 }
 
 .biography, .projects, .contact {
   background-color: transparent;
-  color: white;
+  color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -571,7 +583,7 @@ a {
 }
 
 .pip.active circle {
-  fill: white;
+  fill: var(--white);
   transition: 0.3s fill ease-in;
   cursor: default;
 }
@@ -606,7 +618,7 @@ a {
 }
 
 .slideNav .rightLink, .slideNav .leftLink {
-  color: white;
+  color: var(--white);
   text-decoration: none;
   transition: 0.3s;
 }
@@ -718,8 +730,8 @@ a {
 .showcaseplus .text {
   font-size: 1.4rem;
   padding: 3.15rem;
-  color: black;
-  background-color: white;
+  color: var(--black);
+  background-color: var(--white);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -734,6 +746,7 @@ a {
 
 .showcaseplus .title {
   font-size: 3rem !important;
+  margin-bottom: 0rem;
 }
 
 .showcaseplus .title.adj {
@@ -747,16 +760,16 @@ a {
   position: absolute;
   right: 0.5rem;
   bottom: 1rem;
-  border: 0.05rem solid white;
-  background-color: white;
-  color: black;
+  border: 0.05rem solid var(--white);
+  background-color: var(--white);
+  color: var(--black);
   border-radius: 20px;
   transition: 0.3s;
 }
 
 .hideView:hover {
   background-color: transparent;
-  color: white;
+  color: var(--white);
   transition: 0.3s;
 }
 
@@ -852,8 +865,8 @@ a {
 .contact .info {
   height: 150px;
   width: 400px;
-  background-color: white;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
   font-size: 20px;
   display: flex;
   flex-direction: column;
@@ -915,8 +928,8 @@ a {
 }
 
 .inputField input, .contact .emailForm textarea {
-  background-color: white;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
   resize: none;
 
   padding: 5px 10px;
@@ -938,13 +951,13 @@ a {
 }
 
 .contact .emailForm button, .sendEmail {
-  border: 3px solid white;
+  border: 3px solid var(--white);
   padding: 0.75rem 2.25rem;
   border-radius: 25px;
-  background: linear-gradient(to bottom, white 50%,transparent 50%);
+  background: linear-gradient(to bottom, var(--white) 50%,transparent 50%);
   background-size: 100% 200%;
   background-position: left bottom;
-  color: white;
+  color: var(--white);
   font-weight: 600;
   transition: 0.3s ease-in-out;
   position: static;
@@ -956,7 +969,7 @@ a {
   background-position: left top;
   font-size: 1.25rem;
   margin: -0.20rem;
-  color: black;
+  color: var(--black);
 }
 
 .contact .selfEmail {
@@ -983,7 +996,7 @@ a {
 .emailAddress img {
   max-width: 5rem;
   padding: 0.5rem;
-  border: 0.25rem solid white;
+  border: 0.25rem solid var(--white);
   border-radius: 50px;
   margin-right: 1rem;
   user-select: none;
@@ -991,8 +1004,8 @@ a {
 
 .bubble {
   font-size: 1.25rem;
-  background-color: white;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
   padding: 0.5rem 0.5rem 0.75rem 0.5rem;
   border-radius: 20px;
   margin-left: -5rem;
@@ -1011,7 +1024,7 @@ a {
   margin-right: 20px;
   border-width: 7.5px;
   border-style: solid;
-  border-color: transparent white transparent transparent;
+  border-color: transparent var(--white) transparent transparent;
 }
 
 /* Testing Transitions */
